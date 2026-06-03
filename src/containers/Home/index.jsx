@@ -7,6 +7,7 @@ import { ButtonRed, ButtonWhite } from '../../components/Button/styles'
 
 function Home() {
     const [movie, setMovie] = useState()
+    const [topMovies, setTopMovies] = useState()
 
     useEffect(() => {
         async function getMovies() {
@@ -15,11 +16,21 @@ function Home() {
 
             } = await api.get('/movie/popular')
 
-            setMovie(results[3])
+            setMovie(results[0])
+        }
+
+              async function getTopMovies() {
+            const {
+                data: { results }
+
+            } = await api.get('/movie/top_rated')
+
+            setMovie(results[0])
 
         }
 
         getMovies()
+        getTopMovies()
 
     }, [])
 
@@ -34,8 +45,8 @@ function Home() {
                             <h1>{movie.title}</h1>
                             <p>{movie.overview}</p>
                             <ContainerButtons>
-                              <Button red={true}>Assista Agora</Button>
-                              <Button red={false}>Assista o Trailer</Button>
+                              <Button red>Assista Agora</Button>
+                              <Button>Assista o Trailer</Button>
                             </ContainerButtons>
                         </Info>
                         <Poster>
