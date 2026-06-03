@@ -10,6 +10,8 @@ import { getImages } from '../../utils/getImages'
 function Home() {
     const [movie, setMovie] = useState()
     const [topMovies, setTopMovies] = useState()
+    const [topSeries, setTopSeries] = useState()
+
 
     useEffect(() => {
         async function getMovies() {
@@ -21,18 +23,28 @@ function Home() {
             setMovie(results[0])
         }
 
-              async function getTopMovies() {
+        async function getTopMovies() {
             const {
                 data: { results }
 
             } = await api.get('/movie/top_rated')
 
             setTopMovies(results)
-
         }
+
+        async function getTopSeries() {
+            const {
+                data: { results }
+
+            } = await api.get('/tv/top_rated')
+
+            setTopSeries(results)
+        }
+
 
         getMovies()
         getTopMovies()
+        getTopSeries()
 
     }, [])
 
@@ -58,7 +70,8 @@ function Home() {
                 </Background>
             )}
             
-            {topMovies && <Slider info={topMovies} title={'Top FIlmes'} />}
+            {topMovies && <Slider info={topMovies} title={'Top Filmes'} />}
+            {topSeries && <Slider info={topSeries} title={'Top Series'} />}
         </>
     )
 }
