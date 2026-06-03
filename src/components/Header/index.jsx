@@ -1,0 +1,12 @@
+import Logo from '../../assets/logo.png'
+
+function Header(){
+
+    return(
+        <div>
+            <img src={Logo} alt="logo-r-movies" style={{ width: 300 }}/>
+        </div>
+    )
+}
+
+export default Header
