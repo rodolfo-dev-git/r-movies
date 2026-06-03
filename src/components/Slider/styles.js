@@ -11,4 +11,13 @@ export const Container = styled.div`
     .swiper-wrapper {
         display: flex;
     }
+
+        @media (max-width: 480px) {
+        padding: 0 10px;
+
+        h2 {
+            font-size: 20px;
+            margin: 30px 0 15px 10px;
+        }
+    }
 `

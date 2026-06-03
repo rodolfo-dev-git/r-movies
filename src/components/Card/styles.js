@@ -5,15 +5,32 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     img{
         border-radius: 30px;
         width: 300px;
-        height: 100%;
+        height: auto;
     }
 
     h3 {
         color: #ffffff;
         margin-top: 15px;
+        text-align: center;
+    }
+
+        @media (max-width: 768px) {
+        img {
+            width: 220px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        img {
+            width: 150px;
+        }
+
+        h3 {
+            font-size: 14px;
+        }
     }
 `
