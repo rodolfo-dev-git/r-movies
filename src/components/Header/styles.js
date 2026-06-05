@@ -12,11 +12,14 @@ export const Container = styled.div`
     align-items: center;
     padding: 10px;
 
-    background-color: ${(props) => 
+    background-color: ${(props) =>
         props.changeBackground ? '#000' : 'transparent'};
     transition: background-color 0.6s ease-in-out;
+
+
     img {
-        max-width: 20%;
+        width: clamp(30px, 14vw, 150px);
+        height: auto;
     }
 `
 
@@ -34,6 +37,18 @@ export const Li = styled.li`
     font-size: 28px;
     cursor: pointer;
     position: relative;
+
+    @media (max-width: 1024px) {
+        font-size: 22px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+    }
 
     a {
         text-decoration: none;
