@@ -7,8 +7,10 @@ import Header from '../../components/Header'
 import api from '../../services/api'
 import { Background, Container, ContainerButtons, Info, Poster } from './styles'
 import { getImages } from '../../utils/getImages'
+import Modal from '../../components/Modal'
 
 function Home() {
+    const [showModal, setShowModal] = useState(false)
     const [movie, setMovie] = useState()
     const [topMovies, setTopMovies] = useState()
     const [topSeries, setTopSeries] = useState()
@@ -23,7 +25,7 @@ function Home() {
 
             } = await api.get('/movie/popular')
 
-            setMovie(results[0])
+            setMovie(results[7])
         }
 
         async function getTopMovies() {
@@ -78,20 +80,24 @@ function Home() {
         <>
             {movie && (
                 <Background img={getImages(movie.backdrop_path)}>
-
-                    <Container>
-                        <Info>
-                            <h1>{movie.title}</h1>
-                            <p>{movie.overview}</p>
-                            <ContainerButtons>
-                              <Button red>Assista Agora</Button>
-                              <Button>Assista o Trailer</Button>
-                            </ContainerButtons>
-                        </Info>
-                        <Poster>
-                            <img src={getImages(movie.poster_path)} alt='capa-do-filme'/>
-                        </Poster>
-                    </Container>
+                    {showModal && (
+                        <Modal movieId={movie.id} setShowModal={setShowModal} />
+                    )}
+                        <Container>
+                            <Info>
+                                <h1>{movie.title}</h1>
+                                <p>{movie.overview}</p>
+                                <ContainerButtons>
+                                <Button red>Assista Agora</Button>
+                                <Button onClick={() => setShowModal(true)}>
+                                    Assista o Trailer
+                                </Button>
+                                </ContainerButtons>
+                            </Info>
+                            <Poster>
+                                <img src={getImages(movie.poster_path)} alt='capa-do-filme'/>
+                            </Poster>
+                        </Container>
                 </Background>
             )}
             
