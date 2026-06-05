@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Container, Background, CloseButton } from "./styles"
-import api from "../../services/api"
+import { getVideoMovie } from "../../services/getData"
 
 
 function Modal({ movieId, setShowModal }) {
@@ -8,15 +8,11 @@ function Modal({ movieId, setShowModal }) {
 
     useEffect(() => {
         async function getVideoMovies() {
-            const {
-                data: { results }
-
-            } = await api.get(`/movie/${movieId}/videos`)
-
-            setVideoMovie(results[0])
+            setVideoMovie(await getVideoMovie(movieId))
         }
         getVideoMovies()
     }, [])
+
 
     return (
         <Background onClick={() => setShowModal(false)}>
