@@ -83,3 +83,39 @@ export async function getMovieById(movieId) {
 
     return data
 }
+
+export async function getGenres() {
+    const { data } = await api.get('/genre/movie/list', {
+        params: {
+            language: 'pt-BR'
+        }
+    })
+
+    return data.genres
+}
+
+// export async function getActionMovies() {
+//     const {
+//         data: { results }
+//     } = await api.get('/discover/movie', {
+//         params: {
+//             with_genres: 28,
+//             language: 'pt-BR'
+//         }
+//     })
+
+//     return results
+// }
+
+export async function getMoviesByGenre(genreId) {
+    const {
+        data: { results }
+    } = await api.get('/discover/movie', {
+        params: {
+            with_genres: genreId,
+            language: 'pt-BR'
+        }
+    })
+
+    return results
+}
