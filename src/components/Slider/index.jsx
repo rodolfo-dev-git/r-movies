@@ -4,7 +4,7 @@ import { Container } from "./styles"
 import Card from '../Card'
 
 function Slider({ info, title }) {
-    console.log(info, title)
+
     return (
         <Container>
             <h2>{title}</h2>
@@ -12,7 +12,7 @@ function Slider({ info, title }) {
                 grabCursor
                 spaceBetween={10}
                 slidesPerView={'auto'}
-                clasName="swiper"
+                className="swiper"
             >
                 {info.map((item, index) => (
                     <SwiperSlide key={index}>

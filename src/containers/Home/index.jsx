@@ -24,9 +24,6 @@ function Home() {
 
     useEffect(() => {
          async function getAllData() {
-
-            console.time('time')
-
             Promise.all([
                 getMovies(),
                 getTopMovies(),
@@ -42,7 +39,6 @@ function Home() {
                     setTopPeople(topPeople)
                 })
                 .catch(error => console.error(error))
-                console.timeEnd('time')
         }
 
     getAllData()
@@ -55,7 +51,7 @@ function Home() {
     return (
         <>
             {movie && (
-                <Background img={getImages(movie.backdrop_path)}>
+                <Background $img={getImages(movie.backdrop_path)}>
                     {showModal && (
                         <Modal movieId={movie.id} setShowModal={setShowModal} />
                     )}

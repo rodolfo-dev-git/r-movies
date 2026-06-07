@@ -27,7 +27,7 @@ function Modal({ movieId, setShowModal }) {
                         height="500"
                         width="100%"
                     ></iframe>
-                </Container>
+                 </Container>
             )}
         </Background>
     )
