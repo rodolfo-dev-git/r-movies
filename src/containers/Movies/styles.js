@@ -2,25 +2,30 @@ import styled from 'styled-components'
 
 export const Background = styled.div`
     background-image: url(${(props) => props.$img});
-    height: 100vh;
+    min-height: 100vh;
     background-position: center;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px 20px;
+    position: relative;
 
     &::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5)
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 1024px) {
+        padding-top: 100px;
+        padding-bottom: 50px;
     }
 
     @media (max-width: 768px) {
         padding-top: 120px;
+        padding-bottom: 40px;
     }
 `
 
@@ -28,20 +33,21 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     width: 100%;
     max-width: 1500px;
-
     position: relative;
     z-index: 2;
-
-    gap: 40px;
+    gap: 50px;
     padding: 0 20px;
 
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
+        gap: 30px;
+    }
+
+    @media (max-width: 768px) {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 30px;
+        gap: 25px;
     }
 `
 
@@ -63,7 +69,11 @@ export const Info = styled.div`
         line-height: 1.6;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
+        width: 55%;
+    }
+
+    @media (max-width: 768px) {
         width: 90%;
     }
 
@@ -84,6 +94,7 @@ export const Info = styled.div`
 export const Poster = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
 
     img {
         width: 100%;
@@ -92,7 +103,13 @@ export const Poster = styled.div`
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
+        img {
+            max-width: 320px;
+        }
+    }
+
+    @media (max-width: 768px) {
         img {
             max-width: 280px;
         }
@@ -111,10 +128,15 @@ export const ContainerButtons = styled.div`
     gap: 20px;
     margin-top: 30px;
 
+    @media (max-width: 768px) {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     @media (max-width: 600px) {
         flex-direction: column;
-        width: 100%;
         align-items: center;
+        width: 100%;
 
         button {
             width: 100%;
