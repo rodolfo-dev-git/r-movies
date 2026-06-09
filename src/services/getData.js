@@ -94,18 +94,6 @@ export async function getGenres() {
     return data.genres
 }
 
-// export async function getActionMovies() {
-//     const {
-//         data: { results }
-//     } = await api.get('/discover/movie', {
-//         params: {
-//             with_genres: 28,
-//             language: 'pt-BR'
-//         }
-//     })
-
-//     return results
-// }
 
 export async function getMoviesByGenre(genreId) {
     const {
@@ -116,6 +104,67 @@ export async function getMoviesByGenre(genreId) {
             language: 'pt-BR'
         }
     })
+
+    return results
+}
+
+
+export async function getSeriesByGenre(id) {
+    const { data } = await api.get('/discover/tv', {
+        params: {
+            with_genres: id,
+            language: 'pt-BR'
+        }
+    })
+
+    return data.results
+}
+
+
+export async function getSeries() {
+    const {
+        data: { results }
+    } = await api.get('/tv/popular')
+
+    const randomIndex = Math.floor(Math.random() * 10)
+
+    return results[randomIndex]
+}
+
+export async function getVideoSerie(serieId) {
+    const {
+        data: { results }
+    } = await api.get(`/tv/${serieId}/videos`)
+
+    return results[0]
+}
+
+//*************************** */
+export async function getDetails(id, type) {
+    const { data } = await api.get(`/${type}/${id}`)
+    return data
+}
+
+export async function getVideos(id, type) {
+    const {
+        data: { results }
+    } = await api.get(`/${type}/${id}/videos`)
+
+    return results
+}
+
+export async function getCredits(id, type) {
+    const {
+        data: { cast }
+    } = await api.get(`/${type}/${id}/credits`)
+
+    return cast
+}
+
+export async function getSimilar(id, type) {
+    const {
+        data: { results }
+    } = await api.get(`/${type}/${id}/similar`)
 
     return results
 }
