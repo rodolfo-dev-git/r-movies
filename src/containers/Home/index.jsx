@@ -73,10 +73,10 @@ function Home() {
                 </Background>
             )}
             
-            {topMovies && <Slider info={topMovies} title={'Top Filmes'} />}
-            {topSeries && <Slider info={topSeries} title={'Top Séries'} />}
-            {popularSeries && <Slider info={popularSeries} title={'Séries Populares'} />}
-            {topPeople && <Slider info={topPeople} title={'Top Artista'} />}
+            {topMovies && <Slider mediaType="movie" info={topMovies} title={'Top Filmes'} />}
+            {topSeries && <Slider mediaType="tv" info={topSeries} title={'Top Séries'} />}
+            {popularSeries && <Slider mediaType="tv" info={popularSeries} title={'Séries Populares'} />}
+            {topPeople && <Slider mediaType="person" info={topPeople} title={'Top Artista'} />}
         </>
     )
 }

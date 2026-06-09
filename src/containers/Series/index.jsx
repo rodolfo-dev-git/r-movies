@@ -152,116 +152,22 @@ function Series() {
                 </Background>
             )}
 
-            {actionAdventure && (<Slider
-                info={actionAdventure}
-                title="Ação e Aventura"
-            />
-            )}
-
-            {animation && (
-                <Slider
-                    info={animation}
-                    title="Animação"
-                />
-            )}
-
-            {comedy && (
-                <Slider
-                    info={comedy}
-                    title="Comédia"
-                />
-            )}
-
-            {crime && (
-                <Slider
-                    info={crime}
-                    title="Crime"
-                />
-            )}
-
-            {documentary && (
-                <Slider
-                    info={documentary}
-                    title="Documentário"
-                />
-            )}
-
-            {drama && (
-                <Slider
-                    info={drama}
-                    title="Drama"
-                />
-            )}
-
-            {family && (
-                <Slider
-                    info={family}
-                    title="Família"
-                />
-            )}
-
-            {kids && (
-                <Slider
-                    info={kids}
-                    title="Infantil"
-                />
-            )}
-
-            {mystery && (
-                <Slider
-                    info={mystery}
-                    title="Mistério"
-                />
-            )}
-
-            {news && (
-                <Slider
-                    info={news}
-                    title="Notícias"
-                />
-            )}
-
-            {reality && (
-                <Slider
-                    info={reality}
-                    title="Reality Show"
-                />
-            )}
-
-            {sciFiFantasy && (
-                <Slider
-                    info={sciFiFantasy}
-                    title="Sci-Fi & Fantasia"
-                />
-            )}
-
-            {soap && (
-                <Slider
-                    info={soap}
-                    title="Novelas"
-                />
-            )}
-
-            {talk && (
-                <Slider
-                    info={talk}
-                    title="Talk Show"
-                />
-            )}
-
-            {warPolitics && (
-                <Slider
-                    info={warPolitics}
-                    title="Guerra e Política"
-                />
-            )}
-
-            {western && (
-                <Slider
-                    info={western}
-                    title="Faroeste"
-                />
-            )}
+            {actionAdventure && <Slider mediaType="tv" info={actionAdventure} title="Ação e Aventura" />}
+            {animation && <Slider mediaType="tv" info={animation} title="Animação" />}
+            {comedy && <Slider mediaType="tv" info={comedy} title="Comédia" />}
+            {crime && <Slider mediaType="tv" info={crime} title="Crime" />}
+            {documentary && <Slider mediaType="tv" info={documentary} title="Documentário" />}
+            {drama && <Slider mediaType="tv" info={drama} title="Drama" />}
+            {family && <Slider mediaType="tv" info={family} title="Família" />}
+            {kids && <Slider mediaType="tv" info={kids} title="Infantil" />}
+            {mystery && <Slider mediaType="tv" info={mystery} title="Mistério" />}
+            {news && <Slider mediaType="tv" info={news} title="Notícias" />}
+            {reality && <Slider mediaType="tv" info={reality} title="Reality Show" />}
+            {sciFiFantasy && <Slider mediaType="tv" info={sciFiFantasy} title="Sci-Fi & Fantasia" />}
+            {soap && <Slider mediaType="tv" info={soap} title="Novelas" />}
+            {talk && <Slider mediaType="tv" info={talk} title="Talk Show" />}
+            {warPolitics && <Slider mediaType="tv" info={warPolitics} title="Guerra e Política" />}
+            {western && <Slider mediaType="tv" info={western} title="Faroeste" />}
         </>
     )
 }

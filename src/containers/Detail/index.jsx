@@ -16,28 +16,6 @@ function Detail({ children, red, ...rest }) {
     const [movieCredits, setMovieCredits] = useState()
     const [movieSimilar, setMovieSimilar] = useState()
 
-    // useEffect(() => {
-    //     async function getAllData() {
-    //         Promise.all([
-    //             getMovieById(id),
-    //             getVideoMovies(id),
-    //             getMovieCredits(id),
-    //             getMovieSimilar(id)
-    //         ])
-    //             .then(([movie, videos, credits, similar]) => {
-    //                 setMovie(movie)
-    //                 setMovieVideos(videos)
-    //                 setMovieCredits(credits)
-    //                 setMovieSimilar(similar)
-    //             })
-    //             .catch(error => console.error(error))
-    //     }
-
-    //     getAllData()
-
-
-
-    // }, [])
 
     useEffect(() => {
         async function getAllData() {
@@ -73,7 +51,7 @@ function Detail({ children, red, ...rest }) {
                             <img src={getImages(movie.poster_path)} alt="" />
                         </Cover>
                         <Info>
-                            {/* <h2>{movie.title}</h2> */}
+                            
                             <h2>{movie.title || movie.name}</h2>
                             <SpanGenres genres={movie.genres} />
                             <p>{movie.overview}</p>
@@ -95,7 +73,7 @@ function Detail({ children, red, ...rest }) {
                             </div>
                         ))}
                     </ContainerMovies>
-                    {movieSimilar && <Slider info={movieSimilar} title={type === 'movie' ? 'Filmes Similares' : 'Séries Similares'} />}
+                    {movieSimilar && (<Slider info={movieSimilar} title={type === 'movie' ? 'Filmes Similares' : 'Séries Similares'} mediaType={type} />)}
                 </>
             )}
         </>

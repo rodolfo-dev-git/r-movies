@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     padding: 0 20px;
+    /* cursor: pointer; */
 
     h2 {
         color: #ffffff;

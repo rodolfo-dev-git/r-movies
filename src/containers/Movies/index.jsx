@@ -143,25 +143,24 @@ function Movies() {
                 </Background>
             )}
 
-            {/* {topMovies && <Slider info={topMovies} title={'Top Filmes'} />} */}
-            {actionMovies && (<Slider info={actionMovies} title="Ação" />)}
-            {adventureMovies && (<Slider info={adventureMovies} title="Aventura" />)}
-            {animationMovies && (<Slider info={animationMovies} title="Animação" />)}
-            {comedyMovies && (<Slider info={comedyMovies} title="Comédia" />)}
-            {crimeMovies && (<Slider info={crimeMovies} title="Crime" />)}
-            {documentaryMovies && (<Slider info={documentaryMovies} title="Documentário" />)}
-            {dramaMovies && (<Slider info={dramaMovies} title="Drama" />)}
-            {familyMovies && (<Slider info={familyMovies} title="Família" />)}
-            {fantasyMovies && (<Slider info={fantasyMovies} title="Fantasia" />)}
-            {historyMovies && (<Slider info={historyMovies} title="História" />)}
-            {horrorMovies && (<Slider info={horrorMovies} title="Terror" />)}
-            {musicMovies && (<Slider info={musicMovies} title="Música" />)}
-            {mysteryMovies && (<Slider info={mysteryMovies} title="Mistério" />)}
-            {romanceMovies && (<Slider info={romanceMovies} title="Romance" />)}
-            {scienceFictionMovies && (<Slider info={scienceFictionMovies} title="Ficção Científica" />)}
-            {thrillerMovies && (<Slider info={thrillerMovies} title="Thriller" />)}
-            {warMovies && (<Slider info={warMovies} title="Guerra" />)}
-            {westernMovies && (<Slider info={westernMovies} title="Faroeste" />)}
+            {actionMovies && (<Slider mediaType="movie" info={actionMovies} title="Ação" />)}
+            {adventureMovies && (<Slider mediaType="movie" info={adventureMovies} title="Aventura" />)}
+            {animationMovies && (<Slider mediaType="movie" info={animationMovies} title="Animação" />)}
+            {comedyMovies && (<Slider mediaType="movie" info={comedyMovies} title="Comédia" />)}
+            {crimeMovies && (<Slider mediaType="movie" info={crimeMovies} title="Crime" />)}
+            {documentaryMovies && (<Slider mediaType="movie" info={documentaryMovies} title="Documentário" />)}
+            {dramaMovies && (<Slider mediaType="movie" info={dramaMovies} title="Drama" />)}
+            {familyMovies && (<Slider mediaType="movie" info={familyMovies} title="Família" />)}
+            {fantasyMovies && (<Slider mediaType="movie" info={fantasyMovies} title="Fantasia" />)}
+            {historyMovies && (<Slider mediaType="movie" info={historyMovies} title="História" />)}
+            {horrorMovies && (<Slider mediaType="movie" info={horrorMovies} title="Terror" />)}
+            {musicMovies && (<Slider mediaType="movie" info={musicMovies} title="Música" />)}
+            {mysteryMovies && (<Slider mediaType="movie" info={mysteryMovies} title="Mistério" />)}
+            {romanceMovies && (<Slider mediaType="movie" info={romanceMovies} title="Romance" />)}
+            {scienceFictionMovies && (<Slider mediaType="movie" info={scienceFictionMovies} title="Ficção Científica" />)}
+            {thrillerMovies && (<Slider mediaType="movie" info={thrillerMovies} title="Thriller" />)}
+            {warMovies && (<Slider mediaType="movie" info={warMovies} title="Guerra" />)}
+            {westernMovies && (<Slider mediaType="movie" info={westernMovies} title="Faroeste" />)}
         </>
     )
 }
